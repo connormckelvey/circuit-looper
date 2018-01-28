@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" />
+        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <style>
+     body {
+        font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+       background: #2d3436;
+       color: #dfe6e9;
+     }
+     a {
+       color: #00b894 !important;
+     }
+     #workoutForm {
+       padding: 1em;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border-bottom: solid 1px #636e72;
+     }
+     #workoutForm label {
+       display: flex;
+       flex-direction: column;
+     }
+     #player {
+       position: absolute;
+       z-index: 999;
+     }
+     #instructions {
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        left: 30%;
+     }
+    </style>
+    <body>
+      <!-- 1. Label For=""e <iframe> (and video player) will replace labelis <div> tag. -->
+      <form id="workoutForm" action="#">
+        <label for="">Video URL
+          <input name="workoutVideo" id="workoutVideo" type="text" placeholder="https://www.youtube.com/watch?v=ATfgamzs_vY"/>
+        </label>
+        <label for="">Start Time
+          <input name="startTime" id="startTime" type="text" placeholder="1:28"/>
+        </label>
+        <label for="">End Time
+          <input name="endTime" id="endTime" type="text" placeholder="3:57"/>
+        </label>
+        <label for="">Break
+          <input name="breakTime" id="breakTime" type="text" placeholder="10"/>
+        </label>
+        <label for="">Mute Video
+          <input name="muteVideo" id="muteVideo" type="checkbox" />
+        </label>
+        <label for="">
+          <button type="submit" id="startWorkout" disabled>Start Workout</button>
+        </label>
+      </form>
+      <div id="instructions">
+        <h1>Circuit Looper </h1>
+        <ol>
+          <li>Enter a Workout Video URL from Youtube. <br>
+            <small>Here's a good one to start: <a href="https://www.youtube.com/watch?v=ATfgamzs_vY">https://www.youtube.com/watch?v=ATfgamzs_vY</a></small>
+          </li>
+          <li>Enter the start time of the workout. In the example about the workout starts at 1:28</li>
+          <li>Enter the end time of the workout. In the example about the workout ends at 3:57</li>
+          <li>Enter the amount of recovery time between each circuit. The default is 10 seconds.</li>
+          <li>Choose whether or not to mute the workout video. This is nice if you want to play your own music.</li>
+          <li>Click "Start Workout"</li>
+        </ol>
+
+        <p style="text-align: center">
+          The workout will loop indefinitely. Enjoy!
+        </p>
+      </div>
+      <div id="player"></div>
+    </body>
+</html>
