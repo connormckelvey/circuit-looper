@@ -1,6 +1,4 @@
-function onYouTubeIframeAPIReady() {
-  $(document).ready(main);
-}
+$(document).ready(main);
 
 function timeToSeconds(time) {
   var parts = time.split(':');
